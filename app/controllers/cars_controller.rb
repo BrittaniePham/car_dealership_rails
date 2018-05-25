@@ -35,6 +35,11 @@ class CarsController < ApplicationController
     end
   end
 
+  def destroy
+    Car.find(params[:id]).destroy
+    redirect_to cars_path
+  end
+
   private
     def car_params
       params.require(:car).permit(:make, :model, :year, :color, :msrp, :used)
