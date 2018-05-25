@@ -7,7 +7,7 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
   end
 
-  def new
+  def new #rails knows it's a POST in the form if there is no id
     @car = Car.new #empty object in memory
   end
 
@@ -22,6 +22,17 @@ class CarsController < ApplicationController
   end
 
   def edit
+    @car = Car.find(params[:id])
+  end
+
+  def update
+    @car = Car.find(params[:id])
+
+    if @car.update(car_params)
+      redirect_to cars_path
+    else
+      render :edit
+    end
   end
 
   private
