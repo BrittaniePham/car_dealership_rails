@@ -7,7 +7,7 @@ class CreateCars < ActiveRecord::Migration[5.2]
       t.string :color
       t.float :msrp
       t.boolean :used
-
+      
       t.timestamps
     end
   end

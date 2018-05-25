@@ -1,6 +1,7 @@
 class CarsController < ApplicationController
   def index
-    @cars = Car.all
+    # @cars = Car.all
+    @cars = Car.order(year: :DESC) #same as .all but "order" takes in params
   end
 
   def show
